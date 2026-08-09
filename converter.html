@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Unit Converter Assignment</title>
+</head>
+<body>
+  <h2>Unit Converter</h2>
+
+  <!-- Length -->
+  <p>Enter Inch: <input type="number" id="inch">
+  <button onclick="inchToCm()">Convert</button></p>
+  <p id="inchResult"></p>
+
+  <!-- Height -->
+  <p>Enter Feet: <input type="number" id="feet">
+  <button onclick="feetToMeter()">Convert</button></p>
+  <p id="feetResult"></p>
+
+  <!-- Temperature -->
+  <p>Enter Celsius: <input type="number" id="celsius">
+  <button onclick="celsiusToFahrenheit()">Convert</button></p>
+  <p id="celsiusResult"></p>
+
+  <!-- Area -->
+  <p>Enter Square Meter: <input type="number" id="sqm">
+  <button onclick="sqmToSqft()">Convert</button></p>
+  <p id="sqmResult"></p>
+
+  <script>
+    function inchToCm() {
+      let inch = document.getElementById("inch").value;
+      let cm = inch * 2.54;
+      document.getElementById("inchResult").innerHTML = inch + " inch = " + cm.toFixed(2) + " cm";
+    }
+
+    function feetToMeter() {
+      let feet = document.getElementById("feet").value;
+      let meter = feet * 0.3048;
+      document.getElementById("feetResult").innerHTML = feet + " ft = " + meter.toFixed(2) + " m";
+    }
+
+    function celsiusToFahrenheit() {
+      let celsius = document.getElementById("celsius").value;
+      let fahrenheit = (celsius * 9/5) + 32;
+      document.getElementById("celsiusResult").innerHTML = celsius + " °C = " + fahrenheit.toFixed(2) + " °F";
+    }
+
+    function sqmToSqft() {
+      let sqm = document.getElementById("sqm").value;
+      let sqft = sqm * 10.7639;
+      document.getElementById("sqmResult").innerHTML = sqm + " m² = " + sqft.toFixed(2) + " ft²";
+    }
+  </script>
+</body>
+</html>

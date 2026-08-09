@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculate Grade</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    input {
+      width: 60px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Assignment</h1>
+  <h2>Calculate Grade</h2>
+  <form id="gradeForm">
+    Enter Amount: <input type="number" id="score" min="0" max="100" required>
+    <button type="submit">Submit</button>
+  </form>
+  <p id="result"></p>
+
+  <script>
+    document.getElementById("gradeForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const score = parseInt(document.getElementById("score").value);
+      let grade;
+
+      if (score >= 80) grade = "A";
+      else if (score >= 70) grade = "B";
+      else if (score >= 60) grade = "C";
+      else if (score >= 50) grade = "D";
+      else grade = "F";
+
+      document.getElementById("result").textContent = `You got a ${grade}`;
+    });
+  </script>
+</body>
+</html>
